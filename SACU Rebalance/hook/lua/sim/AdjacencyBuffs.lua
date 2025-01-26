@@ -11,22 +11,22 @@ do
     local hookAdj = {
         T1PowerGenerator = {
             EnergyActive = {
-                SIZE20 = -0.0025
+                SIZE20 = -0.01563
             }
         },
         T3PowerGenerator = {
             EnergyActive = {
-                SIZE20 = -0.05
+                SIZE20 = -0.1562
             }
         },
         T1MassFabricator = {
             MassActive = {
-                SIZE20 = -0.0075
+                SIZE20 = -0.0125
             }
         },
         T3MassFabricator = {
             MassActive = {
-                SIZE20 = -0.0375
+                SIZE20 = -0.2
             }
         },
     }
