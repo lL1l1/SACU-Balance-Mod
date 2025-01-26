@@ -1,6 +1,16 @@
 ---@type UnitBlueprint
 local baseStats = {
     Merge = true,
+    Defense = {
+        Health = 10000,
+        MaxHealth = 10000,
+    },
+    Economy = {
+        BuildCostEnergy = 33000,
+        BuildCostMass = 3000,
+        BuildRate = 120,
+        BuildTime = 4097,
+    },
 }
 
 local source = debug.getinfo(1, 'S').source
