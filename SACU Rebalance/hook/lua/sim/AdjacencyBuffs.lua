@@ -9,6 +9,26 @@ do
     }
 
     local hookAdj = {
+        T1PowerGenerator = {
+            EnergyActive = {
+                SIZE20 = -0.0025
+            }
+        },
+        T3PowerGenerator = {
+            EnergyActive = {
+                SIZE20 = -0.05
+            }
+        },
+        T1MassFabricator = {
+            MassActive = {
+                SIZE20 = -0.0075
+            }
+        },
+        T3MassFabricator = {
+            MassActive = {
+                SIZE20 = -0.0375
+            }
+        },
     }
 
     -- annoying file to hook that needs custom code to replace the global buff definitions
