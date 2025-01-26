@@ -8,7 +8,7 @@ local baseStats = {
     Economy = {
         BuildCostEnergy = 25500,
         BuildCostMass = 2550,
-        BuildRate = 120,
+        BuildRate = 160,
         BuildTime = 4100,
     },
 }
