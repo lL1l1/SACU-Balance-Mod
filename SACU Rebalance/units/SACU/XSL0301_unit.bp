@@ -41,7 +41,7 @@ UnitBlueprint {
             BuildTime = 5900,
         },
         ResourceAllocation = {
-            BuildCostEnergy = 90000,
+            BuildCostEnergy = 130000,
             BuildCostMass = 4500,
             BuildTime = 8400,
             Icon = "ras",
