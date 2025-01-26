@@ -9,8 +9,8 @@ UnitBlueprint {
     EnhancementPresets = {
         BubbleShield = {
             Enhancements = {
-                "Shield",
                 "ShieldGeneratorField",
+                "__nil",
             },
         },
     },
@@ -32,13 +32,13 @@ UnitBlueprint {
             BuildCostEnergy = 360800,
             BuildCostMass = 3500,
             BuildTime = 10800,
-            Prerequisite = "Shield",
+            Prerequisite = "__nil",
         },
         ShieldGeneratorFieldRemove = {
             RemoveEnhancements = {
-                "Shield",
                 "ShieldGeneratorField",
                 "ShieldGeneratorFieldRemove",
+                "__nil",
             },
         },
         SensorRangeEnhancer = {

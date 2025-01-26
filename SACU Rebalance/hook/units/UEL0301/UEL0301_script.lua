@@ -4,19 +4,16 @@ local oldUEL0301 = UEL0301
 UEL0301 = ClassUnit(oldUEL0301) {
     ---@param self UEL0301_new
     ---@param bp UnitBlueprintEnhancement
-    ProcessEnhancementShieldGeneratorField = function(self, bp)
-        self:DestroyShield()
-        self:ForkThread(function()
-            WaitTicks(1)
-            self:CreateShield(bp)
-            self:SetEnergyMaintenanceConsumptionOverride(bp.MaintenanceConsumptionPerSecondEnergy or 0)
-            self:SetMaintenanceConsumptionActive()
-        end)
+    ProcessEnhancementShieldGeneratorField = function (self, bp)
+        self:AddToggleCap('RULEUTC_ShieldToggle')
+        self:SetEnergyMaintenanceConsumptionOverride(bp.MaintenanceConsumptionPerSecondEnergy or 0)
+        self:SetMaintenanceConsumptionActive()
+        self:CreateShield(bp)
     end,
 
     ---@param self UEL0301_new
     ---@param bp UnitBlueprintEnhancement unused
-    ProcessEnhancementShieldGeneratorFieldRemove = function(self, bp)
+    ProcessEnhancementShieldGeneratorFieldRemove = function (self, bp)
         self:DestroyShield()
         self:SetMaintenanceConsumptionInactive()
         self:RemoveToggleCap('RULEUTC_ShieldToggle')
