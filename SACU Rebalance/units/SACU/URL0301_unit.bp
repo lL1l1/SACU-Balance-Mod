@@ -1,4 +1,9 @@
 UnitBlueprint {
     BlueprintId = 'url0301',
     Merge = true,
+    Economy = {
+        BuildCostEnergy = 26400,
+        BuildCostMass = 2000,
+        BuildTime = 14400,
+    },
 }

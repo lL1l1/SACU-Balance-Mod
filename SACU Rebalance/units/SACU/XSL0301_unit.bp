@@ -1,4 +1,12 @@
 UnitBlueprint {
     BlueprintId = 'xsl0301',
     Merge = true,
+    Economy = {
+        BuildCostEnergy = 30200,
+        BuildCostMass = 2400,
+        BuildTime = 14400,
+        ProductionPerSecondEnergy = 300,
+        ProductionPerSecondMass = 3,
+        TeleportEnergyMod = 5.42,
+    },
 }
