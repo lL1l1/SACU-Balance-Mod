@@ -2,14 +2,14 @@
 local baseStats = {
     Merge = true,
     Defense = {
-        Health = 10000,
-        MaxHealth = 10000,
+        Health = 7500,
+        MaxHealth = 7500,
     },
     Economy = {
-        BuildCostEnergy = 33000,
-        BuildCostMass = 3000,
+        BuildCostEnergy = 25500,
+        BuildCostMass = 2550,
         BuildRate = 120,
-        BuildTime = 4097,
+        BuildTime = 4100,
     },
 }
 
