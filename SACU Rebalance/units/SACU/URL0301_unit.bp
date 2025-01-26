@@ -6,8 +6,8 @@ UnitBlueprint {
         MaxHealth = 19000,
     },
     Economy = {
-        BuildCostEnergy = 26400,
-        BuildCostMass = 2000,
+        BuildCostEnergy = 21300,
+        BuildCostMass = 1650,
         BuildTime = 14400,
     },
     EnhancementPresets = {

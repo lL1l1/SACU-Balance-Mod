@@ -2,10 +2,10 @@ UnitBlueprint {
     BlueprintId = 'ual0301',
     Merge = true,
     Economy = {
-        BuildCostEnergy = 27100,
-        BuildCostMass = 1950,
+        BuildCostEnergy = 21300,
+        BuildCostMass = 1650,
         BuildTime = 14400,
-        TeleportEnergyMod = 5.16,
+        TeleportEnergyMod = 4.06,
     },
     EnhancementPresets = {
     },

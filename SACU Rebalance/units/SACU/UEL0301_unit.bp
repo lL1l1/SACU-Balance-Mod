@@ -2,8 +2,8 @@ UnitBlueprint {
     BlueprintId = 'uel0301',
     Merge = true,
     Economy = {
-        BuildCostEnergy = 25200,
-        BuildCostMass = 2100,
+        BuildCostEnergy = 21300,
+        BuildCostMass = 1650,
         BuildTime = 14400,
     },
     EnhancementPresets = {
