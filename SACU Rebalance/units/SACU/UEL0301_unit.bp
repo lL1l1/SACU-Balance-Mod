@@ -6,11 +6,32 @@ UnitBlueprint {
         BuildCostMass = 2100,
         BuildTime = 14400,
     },
+    EnhancementPresets = {
+        BubbleShield = {
+            Enhancements = {
+                "Shield",
+                "ShieldGeneratorField",
+            },
+        },
+    },
     Enhancements = {
         ResourceAllocation = {
             BuildCostEnergy = 90000,
             BuildCostMass = 4500,
             BuildTime = 8400,
+        },
+        ShieldGeneratorField = {
+            BuildCostEnergy = 360800,
+            BuildCostMass = 3500,
+            BuildTime = 10800,
+            Prerequisite = "Shield",
+        },
+        ShieldGeneratorFieldRemove = {
+            RemoveEnhancements = {
+                "Shield",
+                "ShieldGeneratorField",
+                "ShieldGeneratorFieldRemove",
+            },
         },
     },
 }
