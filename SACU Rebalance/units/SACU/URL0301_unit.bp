@@ -17,6 +17,8 @@ UnitBlueprint {
             BuildCostEnergy = 130000,
             BuildCostMass = 4500,
             BuildTime = 8400,
+            DeathWeaponDamageAdd = 1000, -- 1000 + 1000
+            DeathWeaponRadiusAdd = 4, -- 10 + 4
             Slot = "Back",
         },
         ResourceAllocationRemove = {
