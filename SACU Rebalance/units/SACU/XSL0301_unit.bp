@@ -9,4 +9,8 @@ UnitBlueprint {
         ProductionPerSecondMass = 3,
         TeleportEnergyMod = 5.42,
     },
+    EnhancementPresets = {
+    },
+    Enhancements = {
+    },
 }

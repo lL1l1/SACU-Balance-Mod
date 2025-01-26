@@ -6,4 +6,11 @@ UnitBlueprint {
         BuildCostMass = 2100,
         BuildTime = 14400,
     },
+    Enhancements = {
+        ResourceAllocation = {
+            BuildCostEnergy = 90000,
+            BuildCostMass = 4500,
+            BuildTime = 8400,
+        },
+    },
 }
