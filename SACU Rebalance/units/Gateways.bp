@@ -1,0 +1,25 @@
+---@type UnitBlueprint
+local baseStats = {
+    Merge = true,
+}
+
+local source = debug.getinfo(1, 'S').source
+source = DiskToLocal(string.sub(source, 2)--[[@as FileName]])
+
+--- Helper func since storing a BP modifies the inputted table
+---@param bp UnitBlueprint
+---@param newId UnitId
+local function ChangeBpId(bp, newId)
+    bp.BlueprintId = newId
+    bp.Merge = true
+    bp.Source = source
+end
+
+ChangeBpId(baseStats, "uab0304")
+UnitBlueprint(table.copy(baseStats))
+ChangeBpId(baseStats, "ueb0304")
+UnitBlueprint(table.copy(baseStats))
+ChangeBpId(baseStats, "urb0304")
+UnitBlueprint(table.copy(baseStats))
+ChangeBpId(baseStats, "xsb0304")
+UnitBlueprint(table.copy(baseStats))
