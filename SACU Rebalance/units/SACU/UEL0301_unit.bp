@@ -52,12 +52,12 @@ UnitBlueprint {
         RadarJammer = "__nil",
         RadarJammerRemove = "__nil",
         SensorRangeEnhancer = {
-            BuildCostEnergy = 20000,
-            BuildCostMass = 600,
-            BuildTime = 3000,
-            MaintenanceConsumptionPerSecondEnergy = 100,
-            NewOmniRadius = 80,
-            NewVisionRadius = 45,
+            BuildCostEnergy = 63000,
+            BuildCostMass = 1350,
+            BuildTime = 6750,
+            MaintenanceConsumptionPerSecondEnergy = 500,
+            NewOmniRadius = 100,
+            NewVisionRadius = 50,
             Icon = "rj", -- changing this changes the upgrade description, see uel0301-rj in `UnitDescriptions.lua`
             Name = "<LOC enhancements_0071>Intel Support System",
         },
