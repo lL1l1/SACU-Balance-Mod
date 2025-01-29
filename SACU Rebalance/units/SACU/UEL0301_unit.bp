@@ -13,6 +13,14 @@ UnitBlueprint {
                 "__nil",
             },
         },
+        IntelJammer = {
+            Description = "<LOC uel0301_IntelJammer_desc>SACU (Sensor/Jamming Preset)",
+            Enhancements = {
+                "SensorRangeEnhancer",
+                "__nil",
+            },
+            HelpText = "<LOC uel0301_IntelJammer_help>Enhanced during construction with the Intel Support System",
+        },
     },
     Enhancements = {
         ResourceAllocation = {
@@ -41,18 +49,21 @@ UnitBlueprint {
                 "__nil",
             },
         },
+        RadarJammer = "__nil",
+        RadarJammerRemove = "__nil",
         SensorRangeEnhancer = {
             BuildCostEnergy = 20000,
             BuildCostMass = 600,
             BuildTime = 3000,
-            Icon = "sre",
-            Name = "<LOC enhancements_0071>Enhanced Sensor System",
+            MaintenanceConsumptionPerSecondEnergy = 100,
             NewOmniRadius = 80,
             NewVisionRadius = 45,
+            Icon = "rj", -- changing this changes the upgrade description, see uel0301-rj in `UnitDescriptions.lua`
+            Name = "<LOC enhancements_0071>Intel Support System",
         },
         SensorRangeEnhancerRemove = {
-            Icon = "sre",
-            Name = "<LOC enhancements_0072>Remove Enhanced Sensor System",
+            Icon = "rj", -- changing this changes the upgrade description, see uel0301-rj in `UnitDescriptions.lua`
+            Name = "<LOC enhancements_0072>Remove Intel Support System",
         },
         Pod = {
             BuildCostEnergy = 8700,
