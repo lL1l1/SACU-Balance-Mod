@@ -18,6 +18,11 @@ UnitBlueprint {
             SortCategory = "SORTOTHER",
             UnitName = "<LOC xsl0301_RAS_name>",
         },
+        Rambo = "__nil",
+        AdvancedCombat = {
+            Description = "<LOC xsl0301_Rambo_desc>SACU (Rambo preset)",
+            UnitName = "<LOC xsl0301_Rambo_name>",
+        },
     },
     Enhancements = {
         Overcharge = {
@@ -68,5 +73,7 @@ UnitBlueprint {
             },
             Slot = "RCH",
         },
+        Shield = "__nil",
+        ShieldRemove = "__nil",
     },
 }
