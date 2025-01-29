@@ -7,6 +7,8 @@ UnitBlueprint {
         BuildTime = 14400,
         TeleportEnergyMod = 5.16,
     },
+    EnhancementPresets = {
+    },
     Enhancements = {
         ResourceAllocation = {
             BuildCostEnergy = 90000,
