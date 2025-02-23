@@ -26,6 +26,24 @@ XSL0301 = ClassUnit(oldXSL0301) {
         deathNuke:AddDamageMod(baseBp.DeathWeaponDamageAdd)
         deathNuke:AddDamageRadiusMod(baseBp.DeathWeaponRadiusAdd)
     end,
+
+    ---@param self XSL0301_new
+    ---@param bp UnitBlueprintEnhancement 
+    ProcessEnhancementEnhancedSensors = function(self, bp)
+        oldXSL0301.ProcessEnhancementEnhancedSensors(self, bp)
+        local wep = self:GetWeaponByLabel('LightChronatronCannon')
+        wep:AddDamageMod(bp.NewDamageMod)
+    end,
+
+    ---@param self XSL0301_new
+    ---@param bp UnitBlueprintEnhancement 
+    ProcessEnhancementEnhancedSensorsRemove = function(self, bp)
+        oldXSL0301.ProcessEnhancementEnhancedSensorsRemove(self, bp)
+        local enhBp = self.Blueprint.Enhancements['EnhancedSensors']
+        local wep = self:GetWeaponByLabel('LightChronatronCannon')
+        wep:AddDamageMod(-enhBp.NewDamageMod)
+    end,
+
 }
 
 TypeClass = XSL0301
