@@ -11,6 +11,47 @@ UnitBlueprint {
             BuildCostEnergy = 90000,
             BuildCostMass = 4500,
             BuildTime = 8400,
+            Slot = "Back",
+        },
+        ResourceAllocationRemove = {
+            Slot = "Back",
+        },
+        EMPCharge = {
+            BuildCostEnergy = 60000,
+            BuildCostMass = 1000,
+            BuildTime = 3600,
+        },
+        FocusConvertor = {
+            BuildCostEnergy = 24000,
+            BuildCostMass = 800,
+            BuildTime = 3000,
+            NewMaxRadius = 35,
+        },
+        NaniteMissileSystem = {
+            BuildCostEnergy = 20000,
+            BuildCostMass = 800,
+            BuildTime = 3000,
+        },
+        CloakingGenerator = {
+            BuildCostEnergy = 382200,
+            BuildCostMass = 5000,
+            BuildTime = 13800,
+            MaintenanceConsumptionPerSecondEnergy = 3500,
+        },
+        SelfRepairSystem = {
+            BuildCostEnergy = 103500,
+            BuildCostMass = 2200,
+            BuildTime = 6000,
+        },
+        StealthGenerator = {
+            BuildCostEnergy = 7400,
+            BuildCostMass = 400,
+            BuildTime = 1800,
+        },
+        Switchback = {
+            BuildCostEnergy = 51100,
+            BuildCostMass = 800,
+            BuildTime = 4200,
         },
     },
 }
