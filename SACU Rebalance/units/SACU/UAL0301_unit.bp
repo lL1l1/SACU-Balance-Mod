@@ -15,5 +15,10 @@ UnitBlueprint {
             BuildCostMass = 4500,
             BuildTime = 8400,
         },
+        EngineeringFocusingModule = {
+            BuildCostEnergy = 50500,
+            BuildCostMass = 800,
+            BuildTime = 4200,
+        },
     },
 }
