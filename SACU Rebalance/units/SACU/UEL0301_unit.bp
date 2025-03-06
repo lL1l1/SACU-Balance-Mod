@@ -46,6 +46,10 @@ UnitBlueprint {
             Icon = "sre",
             Name = "<LOC enhancements_0072>Remove Enhanced Sensor System",
         },
-
+        Pod = {
+            BuildCostEnergy = 8700,
+            BuildCostMass = 380,
+            BuildTime = 2500,
+        },
     },
 }
