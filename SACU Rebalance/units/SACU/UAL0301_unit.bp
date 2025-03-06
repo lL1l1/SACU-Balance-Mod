@@ -19,9 +19,9 @@ UnitBlueprint {
             DeathWeaponRadiusAdd = 4, -- 10 + 4
         },
         EngineeringFocusingModule = {
-            BuildCostEnergy = 50500,
-            BuildCostMass = 800,
-            BuildTime = 4200,
+            BuildCostEnergy = 10100,
+            BuildCostMass = 500,
+            BuildTime = 1500,
         },
         SystemIntegrityCompensator = "__nil",
         SystemIntegrityCompensatorRemove = "__nil",

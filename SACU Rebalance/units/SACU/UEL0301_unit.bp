@@ -66,9 +66,9 @@ UnitBlueprint {
             Name = "<LOC enhancements_0072>Remove Intel Support System",
         },
         Pod = {
-            BuildCostEnergy = 8700,
-            BuildCostMass = 380,
-            BuildTime = 2500,
+            BuildCostEnergy = 10100,
+            BuildCostMass = 500,
+            BuildTime = 1500,
         },
         AdvancedCoolingUpgrade = {
             BuildCostEnergy = 44700,

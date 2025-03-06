@@ -57,9 +57,9 @@ UnitBlueprint {
             BuildTime = 1800,
         },
         Switchback = {
-            BuildCostEnergy = 51100,
-            BuildCostMass = 800,
-            BuildTime = 4200,
+            BuildCostEnergy = 10100,
+            BuildCostMass = 500,
+            BuildTime = 1500,
         },
     },
 }
