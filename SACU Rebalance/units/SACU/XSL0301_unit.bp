@@ -8,6 +8,7 @@ UnitBlueprint {
         ProductionPerSecondEnergy = 20,
         ProductionPerSecondMass = 1,
         TeleportEnergyMod = 4.06,
+        BuildRate = 25,
     },
     EnhancementPresets = {
         RAS = {

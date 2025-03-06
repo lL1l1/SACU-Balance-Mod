@@ -6,3 +6,8 @@ uel0301_IntelJammer_help="Enhanced during construction with the Intel Support Sy
 uel0301_IntelJammer_name=""
 enhancements_0071="Intel Support System"
 enhancements_0072="Remove Intel Support System"
+
+Unit_Description_0017="Increases SACU build speed and creates an Engineering Drone which act as a flying T3 Engineer. Assists the SACU by default, but can be given its own orders.\n\n+38 Buildpower\n+35 Buildpower Drone"
+Unit_Description_0121="Massively increases SACU build speed.\n\n+73 Buildpower"
+Unit_Description_0168="Massively increases SACU build speed.\n\n+73 Buildpower"
+Unit_Description_0437="Massively increases SACU build speed.\n\n+73 Buildpower"

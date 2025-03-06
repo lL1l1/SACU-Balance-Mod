@@ -6,6 +6,7 @@ UnitBlueprint {
         BuildCostMass = 1650,
         BuildTime = 8250,
         TeleportEnergyMod = 4.06,
+        BuildRate = 25,
     },
     EnhancementPresets = {
         NanoCombat = "__nil",

@@ -9,6 +9,7 @@ UnitBlueprint {
         BuildCostEnergy = 21300,
         BuildCostMass = 1650,
         BuildTime = 8250,
+        BuildRate = 25,
     },
     EnhancementPresets = {
     },

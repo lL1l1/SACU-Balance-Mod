@@ -5,6 +5,7 @@ UnitBlueprint {
         BuildCostEnergy = 21300,
         BuildCostMass = 1650,
         BuildTime = 8250,
+        BuildRate = 25,
     },
     EnhancementPresets = {
         BubbleShield = {
@@ -69,6 +70,7 @@ UnitBlueprint {
             BuildCostEnergy = 10100,
             BuildCostMass = 500,
             BuildTime = 1500,
+            NewBuildRate = 63,
         },
         AdvancedCoolingUpgrade = {
             BuildCostEnergy = 44700,

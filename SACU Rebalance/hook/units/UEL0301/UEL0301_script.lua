@@ -1,4 +1,24 @@
-local oldUEL0301 = UEL0301
+---@alias UEFSCUEnhancementBuffName
+---| "UEFSCUBuildRate"
+
+---@alias UEFSCUEnhancementBuffType
+---| "SCUBUILDRATE"
+
+---@diagnostic disable-next-line: duplicate-doc-alias
+---@alias SCUEnhancementBuffType
+---| AeonSCUEnhancementBuffType
+---| CybranSCUEnhancementBuffType
+---| UEFSCUEnhancementBuffType
+---| SeraphimSCUEnhancementBuffType
+
+---@diagnostic disable-next-line: duplicate-doc-alias
+---@alias SCUEnhancementBuffName
+---| AeonSCUEnhancementBuffName
+---| CybranSCUEnhancementBuffName
+---| UEFSCUEnhancementBuffName
+---| SeraphimSCUEnhancementBuffName
+
+local Buff = import("/lua/sim/buff.lua")
 
 ---@param self Unit
 ---@param amount number
@@ -16,6 +36,8 @@ local function AddToEnergyMaintOverride(self, amount)
         self:SetMaintenanceConsumptionInactive()
     end
 end
+
+local oldUEL0301 = UEL0301
 
 ---@class UEL0301_new : UEL0301
 UEL0301 = ClassUnit(oldUEL0301) {
@@ -101,6 +123,45 @@ UEL0301 = ClassUnit(oldUEL0301) {
         deathNuke:AddDamageMod(baseBp.DeathWeaponDamageAdd)
         deathNuke:AddDamageRadiusMod(baseBp.DeathWeaponRadiusAdd)
     end,
+    --- Drone Upgrade
+    ---@param self UEL0301_new
+    ---@param bp UnitBlueprintEnhancement unused
+    ProcessEnhancementPod = function(self, bp)
+        if not Buffs['UEFSCUBuildRate'] then
+            BuffBlueprint {
+                Name = 'UEFSCUBuildRate',
+                DisplayName = 'UEFSCUBuildRate',
+                BuffType = 'SCUBUILDRATE',
+                Stacks = 'REPLACE',
+                Duration = -1,
+                Affects = {
+                    BuildRate = {
+                        Add = bp.NewBuildRate - self.Blueprint.Economy.BuildRate,
+                        Mult = 1,
+                    },
+                },
+            }
+        end
+        Buff.ApplyBuff(self, 'UEFSCUBuildRate')
+
+        oldUEL0301.ProcessEnhancementPod(self, bp)
+    end,
+
+    ---@param self UEL0301_new
+    ---@param bp UnitBlueprintEnhancement unused
+    ProcessEnhancementPodRemove = function(self, bp)
+        if Buff.HasBuff(self, 'UEFSCUBuildRate') then
+            Buff.RemoveBuff(self, 'UEFSCUBuildRate')
+        end
+
+        oldUEL0301.ProcessEnhancementPodRemove(self, bp)
+    end,
+
 }
 
 TypeClass = UEL0301
+
+__moduleinfo.OnReload = function()
+    -- Buffs are stored globally and only created once so they need to be reset on reload
+    Buffs['UEFSCUBuildRate'] = nil
+end
