@@ -10,6 +10,10 @@ UnitBlueprint {
     },
     EnhancementPresets = {
         NanoCombat = "__nil",
+        Engineer = {
+            -- after ras (10), before combatant (15)
+            BuildIconSortPriority = 12,
+        },
     },
     Enhancements = {
         ResourceAllocation = {

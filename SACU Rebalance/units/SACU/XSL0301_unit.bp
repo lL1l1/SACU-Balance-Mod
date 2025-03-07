@@ -19,6 +19,10 @@ UnitBlueprint {
             SortCategory = "SORTOTHER",
             UnitName = "<LOC xsl0301_RAS_name>",
         },
+        Engineer = {
+            -- after ras (10), before combatant (15)
+            BuildIconSortPriority = 12,
+        },
         Rambo = "__nil",
         AdvancedCombat = {
             Description = "<LOC xsl0301_Rambo_desc>SACU (Rambo preset)",

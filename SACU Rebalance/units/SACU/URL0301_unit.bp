@@ -12,6 +12,10 @@ UnitBlueprint {
         BuildRate = 25,
     },
     EnhancementPresets = {
+        Engineer = {
+            -- after ras (10), before combatant (15)
+            BuildIconSortPriority = 12,
+        },
     },
     Enhancements = {
         ResourceAllocation = {
