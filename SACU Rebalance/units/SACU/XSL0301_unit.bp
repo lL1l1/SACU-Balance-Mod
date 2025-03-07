@@ -23,6 +23,18 @@ UnitBlueprint {
             -- after ras (10), before combatant (15)
             BuildIconSortPriority = 12,
         },
+        EngineerRAS = {
+            Description = "SACU (RAS Engineer preset)",
+            BuildIconSortPriority = 11,
+            Enhancements = {
+                "ResourceAllocation",
+                "EngineeringThroughput",
+            },
+            HelpText = "Support Armored Command Unit. Enhanced during construction with a Resource Allocation System and the Rapid Fabricator.",
+            SelectionPriority = 1,
+            SortCategory = "SORTOTHER",
+            UnitName = "",
+        },
         Rambo = "__nil",
         AdvancedCombat = {
             Description = "<LOC xsl0301_Rambo_desc>SACU (Rambo preset)",

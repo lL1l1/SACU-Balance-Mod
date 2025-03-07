@@ -14,6 +14,18 @@ UnitBlueprint {
             -- after ras (10), before combatant (15)
             BuildIconSortPriority = 12,
         },
+        EngineerRAS = {
+            Description = "SACU (RAS Engineer preset)",
+            BuildIconSortPriority = 11,
+            Enhancements = {
+                "ResourceAllocation",
+                "EngineeringFocusingModule",
+            },
+            HelpText = "Support Armored Command Unit. Enhanced during construction with a Resource Allocation System and the Rapid Fabricator.",
+            SelectionPriority = 1,
+            SortCategory = "SORTOTHER",
+            UnitName = "",
+        },
     },
     Enhancements = {
         ResourceAllocation = {
