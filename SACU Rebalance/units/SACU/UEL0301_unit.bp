@@ -51,5 +51,11 @@ UnitBlueprint {
             BuildCostMass = 380,
             BuildTime = 2500,
         },
+        AdvancedCoolingUpgrade = {
+            BuildCostEnergy = 44700,
+            BuildCostMass = 1000,
+            BuildTime = 5040,
+            NewRateOfFire = 2,
+        },
     },
 }
