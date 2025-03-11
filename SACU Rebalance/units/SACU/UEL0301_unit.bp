@@ -57,5 +57,11 @@ UnitBlueprint {
             BuildTime = 5040,
             NewRateOfFire = 2,
         },
+        HighExplosiveOrdnance = {
+            BuildCostEnergy = 30000,
+            BuildCostMass = 800,
+            BuildTime = 3360,
+            NewMaxRadius = 35,
+        },
     },
 }
