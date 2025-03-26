@@ -4,3 +4,4 @@
 ---@class UnitBlueprintEnhancement : UnitBlueprintEnhancement
 ---@field DeathWeaponDamageAdd number
 ---@field DeathWeaponRadiusAdd number
+---@field NewSpeedMult number

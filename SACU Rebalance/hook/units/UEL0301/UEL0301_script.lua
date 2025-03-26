@@ -1,8 +1,10 @@
 ---@alias UEFSCUEnhancementBuffName
 ---| "UEFSCUBuildRate"
+---| "UEFSCUMovementBonus"
 
 ---@alias UEFSCUEnhancementBuffType
 ---| "SCUBUILDRATE"
+---| "SCUMOVEMENTBONUS"
 
 ---@diagnostic disable-next-line: duplicate-doc-alias
 ---@alias SCUEnhancementBuffType
@@ -157,6 +159,63 @@ UEL0301 = ClassUnit(oldUEL0301) {
         oldUEL0301.ProcessEnhancementPodRemove(self, bp)
     end,
 
+    ---@param self UEL0301_new
+    ---@param bp UnitBlueprintEnhancement
+    ProcessEnhancementAdvancedCoolingUpgrade = function(self, bp)
+        if not Buffs['UEFSCUMovementBonus'] then
+            BuffBlueprint {
+                Name = 'UEFSCUMovementBonus',
+                DisplayName = 'UEFSCUMovementBonus',
+                BuffType = 'SCUMOVEMENTBONUS',
+                Stacks = 'ALWAYS',
+                Duration = -1,
+                Affects = {
+                    MoveMult = {
+                        Mult = bp.NewSpeedMult,
+                    },
+                },
+            }
+        end
+        if Buff.HasBuff(self, 'UEFSCUMovementBonus') then
+            Buff.RemoveBuff(self, 'UEFSCUMovementBonus')
+        end
+        Buff.ApplyBuff(self, 'UEFSCUMovementBonus')
+
+        local wep = self:GetWeaponByLabel('RightHeavyPlasmaCannon')
+        wep:SetTurretYawSpeed(wep.Blueprint.TurretYawSpeed * bp.NewSpeedMult)
+
+        oldUEL0301.ProcessEnhancementAdvancedCoolingUpgrade(self, bp)
+    end,
+
+    ---@param self UEL0301_new
+    ---@param bp UnitBlueprintEnhancement
+    ProcessEnhancementAdvancedCoolingUpgradeRemove = function(self, bp)
+        if Buff.HasBuff(self, 'UEFSCUMovementBonus') then
+            Buff.RemoveBuff(self, 'UEFSCUMovementBonus')
+        end
+
+        local wep = self:GetWeaponByLabel('RightHeavyPlasmaCannon')
+        wep:SetTurretYawSpeed(wep.Blueprint.TurretYawSpeed)
+
+        oldUEL0301.ProcessEnhancementAdvancedCoolingUpgradeRemove(self, bp)
+    end,
+
+    ---@param self UEL0301_new
+    ---@param bp UnitBlueprintEnhancement
+    ProcessEnhancementHighExplosiveOrdnance = function(self, bp)
+        local wep = self:GetWeaponByLabel('RightHeavyPlasmaCannon')
+        wep:AddDamageRadiusMod(bp.NewDamageRadius)
+        wep:AddDamageMod(bp.NewDamageMod)
+    end,
+
+    ---@param self UEL0301_new
+    ---@param bp UnitBlueprintEnhancement
+    ProcessEnhancementHighExplosiveOrdnanceRemove = function(self, bp)
+        local enhBp = self.Blueprint.Enhancements['HighExplosiveOrdnance']
+        local wep = self:GetWeaponByLabel('RightHeavyPlasmaCannon')
+        wep:AddDamageRadiusMod(-enhBp.NewDamageRadius)
+        wep:AddDamageMod(-enhBp.NewDamageMod)
+    end,
 }
 
 TypeClass = UEL0301
@@ -164,4 +223,5 @@ TypeClass = UEL0301
 __moduleinfo.OnReload = function()
     -- Buffs are stored globally and only created once so they need to be reset on reload
     Buffs['UEFSCUBuildRate'] = nil
+    Buffs['UEFSCUMovementBonus'] = nil
 end
