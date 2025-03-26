@@ -80,6 +80,8 @@ UEL0301 = ClassUnit(oldUEL0301) {
     ---@param bp UnitBlueprintEnhancement
     ProcessEnhancementSensorRangeEnhancer = function(self, bp)
         oldUEL0301.ProcessEnhancementSensorRangeEnhancer(self, bp)
+
+        self.RadarJammerEnh = true
         self:SetIntelRadius('Jammer', bp.NewJammerRadius or 26)
         self:EnableUnitIntel('Enhancement', 'Jammer')
         self:AddToggleCap('RULEUTC_JammingToggle')
