@@ -48,15 +48,15 @@ UnitBlueprint {
             DeathWeaponRadiusAdd = 4, -- 10 + 4
         },
         Shield = {
-            BuildCostEnergy = 100200,
+            BuildCostEnergy = 70500,
             BuildCostMass = 2000,
-            BuildTime = 7200,
-            MaintenanceConsumptionPerSecondEnergy = 500,
+            BuildTime = 6220,
+            MaintenanceConsumptionPerSecondEnergy = 300,
         },
         ShieldGeneratorField = {
-            BuildCostEnergy = 360800,
+            BuildCostEnergy = 181000,
             BuildCostMass = 3500,
-            BuildTime = 10800,
+            BuildTime = 11300,
             Prerequisite = "__nil",
         },
         ShieldGeneratorFieldRemove = {
@@ -89,16 +89,16 @@ UnitBlueprint {
             NewBuildRate = 63,
         },
         AdvancedCoolingUpgrade = {
-            BuildCostEnergy = 44700,
+            BuildCostEnergy = 33700,
             BuildCostMass = 1000,
-            BuildTime = 5040,
+            BuildTime = 3420,
             NewRateOfFire = 10 / 5,
             NewSpeedMult = 3.0 / 2.2
         },
         HighExplosiveOrdnance = {
-            BuildCostEnergy = 30000,
+            BuildCostEnergy = 27000,
             BuildCostMass = 800,
-            BuildTime = 3360,
+            BuildTime = 2850,
             NewDamageMod = 150,
             NewDamageRadius = 1,
             NewMaxRadius = "__nil",
