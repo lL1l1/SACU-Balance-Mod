@@ -20,6 +20,12 @@ UnitBlueprint {
             BuildCostMass = 4500,
             BuildTime = 8400,
         },
+        Shield = {
+            BuildCostEnergy = 100200,
+            BuildCostMass = 2000,
+            BuildTime = 7200,
+            MaintenanceConsumptionPerSecondEnergy = 500,
+        },
         ShieldGeneratorField = {
             BuildCostEnergy = 360800,
             BuildCostMass = 3500,
