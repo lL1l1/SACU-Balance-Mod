@@ -52,12 +52,14 @@ UnitBlueprint {
             BuildCostMass = 2000,
             BuildTime = 6220,
             MaintenanceConsumptionPerSecondEnergy = 300,
+            ScriptedEnergyMaintenanceToggle = true,
         },
         ShieldGeneratorField = {
             BuildCostEnergy = 181000,
             BuildCostMass = 3500,
             BuildTime = 11300,
             Prerequisite = "__nil",
+            ScriptedEnergyMaintenanceToggle = true,
         },
         ShieldGeneratorFieldRemove = {
             RemoveEnhancements = {
