@@ -27,6 +27,8 @@ local EffectTemplate = import("/lua/effecttemplates.lua")
 local utilities = import('/lua/utilities.lua')
 
 ---@class ADFChronoDampener : DefaultProjectileWeapon
+---@field OriginalFxMuzzleFlashScale number
+---@field CategoriesToStun EntityCategory
 ADFChronoDampener = Class(DefaultProjectileWeapon) {
     FxMuzzleFlash = EffectTemplate.AChronoDampenerLarge,
     FxMuzzleFlashScale = 0.5,
@@ -74,6 +76,7 @@ ADFChronoDampener = Class(DefaultProjectileWeapon) {
 
             local radius = i * sliceSize
             local targets = utilities.GetTrueEnemyUnitsInSphere(
+            ---@diagnostic disable-next-line: param-type-mismatch
                 self,
                 self.unit:GetPosition(),
                 radius,
