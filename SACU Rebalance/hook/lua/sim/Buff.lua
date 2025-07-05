@@ -17,7 +17,7 @@ local function regenAuraAffectCalculate(unit, buffName, affectState, buffsForAff
     end
 
     local mult = affectState.Mult
-    if mult then
+    if mult and mult ~= 1 then
         local maxHealth = unit.Blueprint.Defense.MaxHealth
         adds = adds + mult * maxHealth * affectState.Count
     end
@@ -26,7 +26,7 @@ local function regenAuraAffectCalculate(unit, buffName, affectState, buffsForAff
 end
 
 --- A function that calculates buff add and mult values for a buff contributing to an "affect".
----@alias AffectCalculation fun(unit: Unit, affectBuffName: BuffName, affectBp: BlueprintBuffAffectState, buffsForAffect: table<BuffName, BlueprintBuffAffectState>): add: number, mult: number
+---@alias AffectCalculation fun(unit: Unit, affectBuffName: BuffName, affectState: BlueprintBuffAffectState, buffsForAffect: table<BuffName, BlueprintBuffAffectState>): add: number, mult: number
 
 ---@type table<BuffName, table<BuffName, AffectCalculation>>
 UniqueAffectCalculation = {
@@ -91,7 +91,7 @@ local function regenAuraBuffCalculate(unit, buffName, affectType, initialVal, in
             end
 
             local mult = affectState.Mult
-            if mult then
+            if mult and mult ~= 1 then
                 for i = 1, affectState.Count do
                     mults = mults * mult
                 end
