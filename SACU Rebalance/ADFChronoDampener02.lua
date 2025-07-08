@@ -110,7 +110,6 @@ ADFChronoDampener = Class(DefaultProjectileWeapon) {
     --- Thread to avoid waiting in the firing cycle and stalling the main cannon.
     ---@param self ADFChronoDampener
     ExpandingStunThread = function(self)
-        -- extract information from the buff blueprint
         local bp = self.Blueprint
         local reloadTimeTicks = MATH_IRound(10 / bp.RateOfFire)
         local buff = bp.Buffs[1]
@@ -123,8 +122,8 @@ ADFChronoDampener = Class(DefaultProjectileWeapon) {
         local fireTick = GetGameTick()
 
         for i = 1, slices do
-
             local radius = i * radiusPerSlice
+
             local targets = utilities.GetTrueEnemyUnitsInSphere(
             ---@diagnostic disable-next-line: param-type-mismatch
                 self,
@@ -132,11 +131,10 @@ ADFChronoDampener = Class(DefaultProjectileWeapon) {
                 radius,
                 self.CategoriesToStun
             )
-            local fxUnitStunFlashScale = (0.5 + (slices - i) / (slices - 1) * 1.5)
             local currentTick = GetGameTick()
+            local fxUnitStunFlashScale = (0.5 + (slices - i) / (slices - 1) * 1.5)
 
             for _, target in targets do
-
                 -- add stun effect only on targets our Chrono Dampener stunned
                 if initialStunFxAppliedUnits[target] then
                     self:PlayStunEffect(target)
