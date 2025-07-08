@@ -57,6 +57,56 @@ ADFChronoDampener = Class(DefaultProjectileWeapon) {
         self.Trash:Add(ForkThread(self.ExpandingStunThread, self))
     end,
 
+    --- EFfect to play as a unit is stunned
+    ---@param self ADFChronoDampener
+    ---@param target Unit
+    PlayStunEffect = function(self, target)
+        local count = target:GetBoneCount()
+        for k, effect in self.FxUnitStun do
+            local emit = CreateEmitterAtBone(
+                target, Random(0, count - 1), target.Army, effect
+            )
+
+            -- scale the effect a bit
+            emit:ScaleEmitter(0.5)
+
+            -- change lod to match outer lod of unit
+            local lods = target.Blueprint.Display.Mesh.LODs
+            if lods then
+                emit:SetEmitterParam("LODCUTOFF", lods[table.getn(lods)].LODCutoff)
+            end
+        end
+    end,
+
+    --- Effect to play once per unit
+    ---@param self ADFChronoDampener
+    ---@param target Unit
+    ---@param scale number
+    PlayInitialStunEffect = function(self, target, scale)
+        -- add initial flash effect
+        for _, effect in self.FxUnitStunFlash do
+            local emit = CreateEmitterOnEntity(target, target.Army, effect)
+            emit:ScaleEmitter(scale * math.max(target.Blueprint.SizeX, target.Blueprint.SizeZ))
+        end
+
+        -- add initial stun effect on target
+        local count = target:GetBoneCount()
+        for _, effect in self.FxUnitStun do
+            local emit = CreateEmitterAtBone(
+                target, Random(0, count - 1), target.Army, effect
+            )
+
+            -- scale the effect a bit
+            emit:ScaleEmitter(0.5)
+
+            -- change lod to match outer lod of unit
+            local lods = target.Blueprint.Display.Mesh.LODs
+            if lods then
+                emit:SetEmitterParam("LODCUTOFF", lods[table.getn(lods)].LODCutoff)
+            end
+        end
+    end,
+
     --- Thread to avoid waiting in the firing cycle and stalling the main cannon.
     ---@param self ADFChronoDampener
     ExpandingStunThread = function(self)
@@ -89,21 +139,7 @@ ADFChronoDampener = Class(DefaultProjectileWeapon) {
 
                 -- add stun effect only on targets our Chrono Dampener stunned
                 if initialStunFxAppliedUnits[target] then
-                    local count = target:GetBoneCount()
-                    for k, effect in self.FxUnitStun do
-                        local emit = CreateEmitterAtBone(
-                            target, Random(0, count - 1), target.Army, effect
-                        )
-
-                        -- scale the effect a bit
-                        emit:ScaleEmitter(0.5)
-
-                        -- change lod to match outer lod of unit
-                        local lods = target.Blueprint.Display.Mesh.LODs
-                        if lods then
-                            emit:SetEmitterParam("LODCUTOFF", lods[table.getn(lods)].LODCutoff)
-                        end
-                    end
+                    self:PlayStunEffect(target)
                 end
 
                 -- prevent multiple Chrono Dampeners from stunlocking units with desynchronized firings
@@ -119,29 +155,8 @@ ADFChronoDampener = Class(DefaultProjectileWeapon) {
                     end
                 end
 
-                -- add initial flash effect
-                for _, effect in self.FxUnitStunFlash do
-                    local emit = CreateEmitterOnEntity(target, target.Army, effect)
-                    emit:ScaleEmitter(fxUnitStunFlashScale * math.max(target.Blueprint.SizeX, target.Blueprint.SizeZ))
-                end
+                self:PlayInitialStunEffect(target, fxUnitStunFlashScale)
                 initialStunFxAppliedUnits[target] = true
-
-                -- add initial stun effect on target
-                local count = target:GetBoneCount()
-                for _, effect in self.FxUnitStun do
-                    local emit = CreateEmitterAtBone(
-                        target, Random(0, count - 1), target.Army, effect
-                    )
-
-                    -- scale the effect a bit
-                    emit:ScaleEmitter(0.5)
-
-                    -- change lod to match outer lod of unit
-                    local lods = target.Blueprint.Display.Mesh.LODs
-                    if lods then
-                        emit:SetEmitterParam("LODCUTOFF", lods[table.getn(lods)].LODCutoff)
-                    end
-                end
             end
 
             WaitTicks(sliceTime)
