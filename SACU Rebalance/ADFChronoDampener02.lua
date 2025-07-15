@@ -25,6 +25,9 @@ local DefaultProjectileWeapon = import("/lua/sim/defaultweapons.lua").DefaultPro
 
 local EffectTemplate = import("/lua/effecttemplates.lua")
 local utilities = import('/lua/utilities.lua')
+local ApplyBuff = import('/lua/sim/Buff.lua').ApplyBuff
+
+local SACUChronoBuffName = "AeonSACUChronoDampener"
 
 ---@class ADFChronoDampener : DefaultProjectileWeapon
 ---@field OriginalFxMuzzleFlashScale number
@@ -43,6 +46,24 @@ ADFChronoDampener = Class(DefaultProjectileWeapon) {
 
         local buff = self.Blueprint.Buffs[1]
         self.CategoriesToStun = ParseEntityCategory(buff.TargetAllow) - ParseEntityCategory(buff.TargetDisallow)
+        self.ChronoBuffName = SACUChronoBuffName
+        if not Buffs[SACUChronoBuffName] then
+            BuffBlueprint {
+                Name = SACUChronoBuffName,
+                DisplayName = "SACU Chrono Dampening",
+                BuffType = 'TimeDilationDebuff',
+                Stacks = 'ALWAYS',
+                Duration = -1,
+                Affects = {
+                    MoveMult = {
+                        Mult = 0.95,
+                    },
+                    RateOfFire = {
+                        Mult = 0.8,
+                    },
+                },
+            }
+        end
     end,
 
     ---@param self ADFChronoDampener
@@ -107,6 +128,19 @@ ADFChronoDampener = Class(DefaultProjectileWeapon) {
         end
     end,
 
+    ---@param self ADFChronoDampener
+    ---@param target Unit
+    ---@return boolean
+    ApplyUnitDebuff = function(self, target)
+        if not target or target.Dead or IsDestroyed(target) then
+            return false
+        end
+
+        ApplyBuff(target, self.ChronoBuffName)
+
+        return true
+    end,
+
     --- Thread to avoid waiting in the firing cycle and stalling the main cannon.
     ---@param self ADFChronoDampener
     ExpandingStunThread = function(self)
@@ -119,7 +153,6 @@ ADFChronoDampener = Class(DefaultProjectileWeapon) {
         local radiusPerSlice = maxRadius / slices
         local sliceTime = stunDuration * 10 / slices + 1
         local initialStunFxAppliedUnits = {}
-        local fireTick = GetGameTick()
 
         for i = 1, slices do
             local radius = i * radiusPerSlice
@@ -131,7 +164,6 @@ ADFChronoDampener = Class(DefaultProjectileWeapon) {
                 radius,
                 self.CategoriesToStun
             )
-            local currentTick = GetGameTick()
             local fxUnitStunFlashScale = (0.5 + (slices - i) / (slices - 1) * 1.5)
 
             for _, target in targets do
@@ -140,21 +172,12 @@ ADFChronoDampener = Class(DefaultProjectileWeapon) {
                     self:PlayStunEffect(target)
                 end
 
-                -- prevent multiple Chrono Dampeners from stunlocking units with desynchronized firings
-                if target.chronoProtectionTick > currentTick then
-                    continue
-                end
+                local buffApplied = self:ApplyUnitDebuff(target)
 
-                -- add stun
-                if not target:BeenDestroyed() then
-                    if buff.BuffType == 'STUN' then
-                        target:SetStunned(stunDuration * (slices - i + 1) / slices + 0.1)
-                        target.chronoProtectionTick = fireTick + reloadTimeTicks
-                    end
+                if buffApplied then
+                    self:PlayInitialStunEffect(target, fxUnitStunFlashScale)
+                    initialStunFxAppliedUnits[target] = true
                 end
-
-                self:PlayInitialStunEffect(target, fxUnitStunFlashScale)
-                initialStunFxAppliedUnits[target] = true
             end
 
             WaitTicks(sliceTime)
@@ -168,3 +191,7 @@ ADFChronoDampener = Class(DefaultProjectileWeapon) {
         self.FxMuzzleFlashScale = self.OriginalFxMuzzleFlashScale * radius / self.Blueprint.MaxRadius
     end,
 }
+
+__moduleinfo.OnReload = function()
+    Buffs[SACUChronoBuffName] = nil
+end
