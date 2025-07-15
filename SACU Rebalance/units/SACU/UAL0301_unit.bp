@@ -73,16 +73,11 @@ UnitBlueprint {
             AboveWaterFireOnly = false,
             AboveWaterTargetsOnly = false,
             BallisticArc = "RULEUBA_None",
-            Buffs = {
-                {
-                    Add = { OnFire = true },
-                    BuffType = "STUN",
-                    Duration = 2,
-                    DurationImmune = 5,
-                    Radius = 0,
-                    TargetAllow = "MOBILE",
-                    TargetDisallow = "AIR, EXPERIMENTAL, COMMAND",
-                },
+            ---@class ChronoDampenerParams
+            ChronoDampenerParams = {
+                Duration = 5,
+                TargetAllow = "MOBILE",
+                TargetDisallow = "AIR, EXPERIMENTAL, COMMAND",
             },
             CollideFriendly = false,
             Damage = 0,

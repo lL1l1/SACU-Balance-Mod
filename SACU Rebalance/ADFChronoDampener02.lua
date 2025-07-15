@@ -32,6 +32,8 @@ local SACUChronoBuffName = "AeonSACUChronoDampener"
 ---@class ADFChronoDampener : DefaultProjectileWeapon
 ---@field OriginalFxMuzzleFlashScale number
 ---@field CategoriesToStun EntityCategory
+---@field Blueprint WeaponBlueprint | { ChronoDampenerParams: ChronoDampenerParams }
+---@field ChronoBuffName string
 ADFChronoDampener = Class(DefaultProjectileWeapon) {
     FxMuzzleFlash = EffectTemplate.AChronoDampenerLarge,
     FxMuzzleFlashScale = 0.5,
@@ -44,7 +46,7 @@ ADFChronoDampener = Class(DefaultProjectileWeapon) {
         -- Stores the original FX scale so it can be adjusted by range changes
         self.OriginalFxMuzzleFlashScale = self.FxMuzzleFlashScale
 
-        local buff = self.Blueprint.Buffs[1]
+        local buff = self.Blueprint.ChronoDampenerParams
         self.CategoriesToStun = ParseEntityCategory(buff.TargetAllow) - ParseEntityCategory(buff.TargetDisallow)
         self.ChronoBuffName = SACUChronoBuffName
         if not Buffs[SACUChronoBuffName] then
@@ -53,7 +55,7 @@ ADFChronoDampener = Class(DefaultProjectileWeapon) {
                 DisplayName = "SACU Chrono Dampening",
                 BuffType = 'TimeDilationDebuff',
                 Stacks = 'ALWAYS',
-                Duration = -1,
+                Duration = buff.Duration,
                 Affects = {
                     MoveMult = {
                         Mult = 0.95,
