@@ -29,18 +29,24 @@ local ApplyBuff = import('/lua/sim/Buff.lua').ApplyBuff
 
 local SACUChronoBuffName = "AeonSACUChronoDampener"
 
----@class ADFChronoDampener : DefaultProjectileWeapon
+---@alias AeonSCUEnhancementBuffName
+---| "AeonSACUChronoDampener"
+
+---@alias AeonSCUEnhancementBuffType
+---| "TimeDilationDebuff"
+
+---@class ADFChronoDampener02 : DefaultProjectileWeapon
 ---@field OriginalFxMuzzleFlashScale number
 ---@field CategoriesToStun EntityCategory
 ---@field Blueprint WeaponBlueprint | { ChronoDampenerParams: ChronoDampenerParams }
 ---@field ChronoBuffName string
-ADFChronoDampener = Class(DefaultProjectileWeapon) {
+ADFChronoDampener02 = Class(DefaultProjectileWeapon) {
     FxMuzzleFlash = EffectTemplate.AChronoDampenerLarge,
     FxMuzzleFlashScale = 0.5,
     FxUnitStun = EffectTemplate.Aeon_HeavyDisruptorCannonMuzzleCharge,
     FxUnitStunFlash = EffectTemplate.Aeon_HeavyDisruptorCannonUnitHit,
 
-    ---@param self ADFChronoDampener
+    ---@param self ADFChronoDampener02
     OnCreate = function(self)
         DefaultProjectileWeapon.OnCreate(self)
         -- Stores the original FX scale so it can be adjusted by range changes
@@ -68,7 +74,7 @@ ADFChronoDampener = Class(DefaultProjectileWeapon) {
         end
     end,
 
-    ---@param self ADFChronoDampener
+    ---@param self ADFChronoDampener02
     ---@param muzzle string
     CreateProjectileAtMuzzle = function(self, muzzle)
         local bp = self.Blueprint
@@ -81,7 +87,7 @@ ADFChronoDampener = Class(DefaultProjectileWeapon) {
     end,
 
     --- EFfect to play as a unit is stunned
-    ---@param self ADFChronoDampener
+    ---@param self ADFChronoDampener02
     ---@param target Unit
     PlayStunEffect = function(self, target)
         local count = target:GetBoneCount()
@@ -102,7 +108,7 @@ ADFChronoDampener = Class(DefaultProjectileWeapon) {
     end,
 
     --- Effect to play once per unit
-    ---@param self ADFChronoDampener
+    ---@param self ADFChronoDampener02
     ---@param target Unit
     ---@param scale number
     PlayInitialStunEffect = function(self, target, scale)
@@ -130,7 +136,7 @@ ADFChronoDampener = Class(DefaultProjectileWeapon) {
         end
     end,
 
-    ---@param self ADFChronoDampener
+    ---@param self ADFChronoDampener02
     ---@param target Unit
     ---@return boolean
     ApplyUnitDebuff = function(self, target)
@@ -144,7 +150,7 @@ ADFChronoDampener = Class(DefaultProjectileWeapon) {
     end,
 
     --- Thread to avoid waiting in the firing cycle and stalling the main cannon.
-    ---@param self ADFChronoDampener
+    ---@param self ADFChronoDampener02
     ExpandingStunThread = function(self)
         local bp = self.Blueprint
         local reloadTimeTicks = MATH_IRound(10 / bp.RateOfFire)
@@ -186,7 +192,7 @@ ADFChronoDampener = Class(DefaultProjectileWeapon) {
         end
     end,
 
-    ---@param self ADFChronoDampener
+    ---@param self ADFChronoDampener02
     ---@param radius number
     ChangeMaxRadius = function(self, radius)
         DefaultProjectileWeapon.ChangeMaxRadius(self, radius)
