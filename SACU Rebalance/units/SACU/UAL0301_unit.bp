@@ -2,6 +2,9 @@
 UnitBlueprint {
     BlueprintId = 'ual0301',
     Merge = true,
+    AddCategories = {
+        "OVERLAYINDIRECTFIRE",
+    },
     Economy = {
         BuildCostEnergy = 21300,
         BuildCostMass = 1650,
@@ -49,9 +52,8 @@ UnitBlueprint {
             BuildTime = 5940,
             ShowBones = { "Turbine" },
             Icon = "cd",
-            Name = "Remove Chrono Dampener",
+            Name = "Chrono Dampener",
             Slot = "Back",
-
         },
         ChronoDampenerRemove = {
             BuildCostEnergy = 1,
@@ -65,11 +67,12 @@ UnitBlueprint {
                 "ChronoDampener",
                 "ChronoDampenerRemove",
             },
-            Slot = "LCH",
+            Slot = "Back",
         },
     },
     ModWeapon = {
         {
+            AddIndex = 2,
             AboveWaterFireOnly = false,
             AboveWaterTargetsOnly = false,
             BallisticArc = "RULEUBA_None",
@@ -78,6 +81,16 @@ UnitBlueprint {
                 Duration = 5,
                 TargetAllow = "MOBILE",
                 TargetDisallow = "AIR, EXPERIMENTAL, COMMAND",
+                ExpandDuration = 5,
+                ---@type table<BuffAffectName, BlueprintBuffAffect>
+                Affects = {
+                    MoveMult = {
+                        Mult = 0.95,
+                    },
+                    RateOfFire = {
+                        Mult = 1/0.92,
+                    },
+                },
             },
             CollideFriendly = false,
             Damage = 0,
@@ -103,8 +116,8 @@ UnitBlueprint {
             ProjectileLifetimeUsesMultiplier = 1.15,
             RackBones = {
                 {
-                    MuzzleBones = { "Head" },
-                    RackBone = "Head",
+                    MuzzleBones = { "AttachPoint" },
+                    RackBone = "AttachPoint",
                 },
             },
             RackFireTogether = false,

@@ -52,8 +52,8 @@ ADFChronoDampener02 = Class(DefaultProjectileWeapon) {
         -- Stores the original FX scale so it can be adjusted by range changes
         self.OriginalFxMuzzleFlashScale = self.FxMuzzleFlashScale
 
-        local buff = self.Blueprint.ChronoDampenerParams
-        self.CategoriesToStun = ParseEntityCategory(buff.TargetAllow) - ParseEntityCategory(buff.TargetDisallow)
+        local params = self.Blueprint.ChronoDampenerParams
+        self.CategoriesToStun = ParseEntityCategory(params.TargetAllow) - ParseEntityCategory(params.TargetDisallow)
         self.ChronoBuffName = SACUChronoBuffName
         if not Buffs[SACUChronoBuffName] then
             BuffBlueprint {
@@ -61,15 +61,8 @@ ADFChronoDampener02 = Class(DefaultProjectileWeapon) {
                 DisplayName = "SACU Chrono Dampening",
                 BuffType = 'TimeDilationDebuff',
                 Stacks = 'ALWAYS',
-                Duration = buff.Duration,
-                Affects = {
-                    MoveMult = {
-                        Mult = 0.95,
-                    },
-                    RateOfFire = {
-                        Mult = 0.8,
-                    },
-                },
+                Duration = params.Duration,
+                Affects = table.deepcopy(params.Affects)
             }
         end
     end,
@@ -145,6 +138,7 @@ ADFChronoDampener02 = Class(DefaultProjectileWeapon) {
         end
 
         ApplyBuff(target, self.ChronoBuffName)
+        target:DebugLog('Target stunned', GetGameTick())
 
         return true
     end,
@@ -154,13 +148,13 @@ ADFChronoDampener02 = Class(DefaultProjectileWeapon) {
     ExpandingStunThread = function(self)
         local bp = self.Blueprint
         local reloadTimeTicks = MATH_IRound(10 / bp.RateOfFire)
-        local buff = bp.Buffs[1]
-        local stunDuration = buff.Duration
+        local params = bp.ChronoDampenerParams
+        local stunDuration = params.ExpandDuration
         local maxRadius = self:GetMaxRadius()
         local slices = 10
         local radiusPerSlice = maxRadius / slices
         local sliceTime = stunDuration * 10 / slices + 1
-        local initialStunFxAppliedUnits = {}
+        local debuffApplied = {}
 
         for i = 1, slices do
             local radius = i * radiusPerSlice
@@ -176,15 +170,16 @@ ADFChronoDampener02 = Class(DefaultProjectileWeapon) {
 
             for _, target in targets do
                 -- add stun effect only on targets our Chrono Dampener stunned
-                if initialStunFxAppliedUnits[target] then
+                if debuffApplied[target] then
                     self:PlayStunEffect(target)
+                    continue
                 end
 
                 local buffApplied = self:ApplyUnitDebuff(target)
 
                 if buffApplied then
                     self:PlayInitialStunEffect(target, fxUnitStunFlashScale)
-                    initialStunFxAppliedUnits[target] = true
+                    debuffApplied[target] = true
                 end
             end
 
