@@ -20,7 +20,6 @@ UnitBlueprint {
                 "Pod",
             },
             HelpText = "Support Armored Command Unit. Enhanced during construction with a Resource Allocation System and the Engineering Drone.",
-            SelectionPriority = 1,
             SortCategory = "SORTOTHER",
             UnitName = "",
         },

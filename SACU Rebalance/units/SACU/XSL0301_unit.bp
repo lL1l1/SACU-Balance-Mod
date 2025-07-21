@@ -31,7 +31,6 @@ UnitBlueprint {
                 "EngineeringThroughput",
             },
             HelpText = "Support Armored Command Unit. Enhanced during construction with a Resource Allocation System and the Rapid Fabricator.",
-            SelectionPriority = 1,
             SortCategory = "SORTOTHER",
             UnitName = "",
         },
