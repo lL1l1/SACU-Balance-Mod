@@ -62,7 +62,7 @@ UnitBlueprint {
             BuildTime = 5940,
             ShowBones = { "Turbine" },
             Icon = "cd",
-            Name = "Chrono Dampener",
+            Name = "Minor Chrono Dampener",
             Slot = "Back",
         },
         ChronoDampenerRemove = {
