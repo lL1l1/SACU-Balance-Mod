@@ -30,6 +30,17 @@ UnitBlueprint {
             SortCategory = "SORTOTHER",
             UnitName = "",
         },
+        ChronoSupport = {
+            Description = "SACU (Chrono Dampener preset)",
+            BuildIconSortPriority = 31,
+            Enhancements = {
+                "ChronoDampener",
+            },
+            HelpText = "Support Armored Command Unit. Enhanced during construction with the Chrono Dampener.",
+            SelectionPriority = 1,
+            SortCategory = "SORTOTHER",
+            UnitName = "",
+        },
     },
     Enhancements = {
         ResourceAllocation = {
