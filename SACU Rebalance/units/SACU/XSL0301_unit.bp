@@ -7,7 +7,7 @@ UnitBlueprint {
         BuildTime = 8250,
         ProductionPerSecondEnergy = 20,
         ProductionPerSecondMass = 1,
-        TeleportEnergyMod = 4.06,
+        TeleportEnergyMod = 7.68,
         BuildRate = 25,
     },
     EnhancementPresets = {
