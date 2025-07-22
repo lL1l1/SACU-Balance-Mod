@@ -1,7 +1,7 @@
 name = "SACU Rebalance"
 version = 1
 copyright = ""
-description = "Implements proposed changes for the SACU rebalance. SACUs are overall cheaper, some upgrades are revamped, and they have a new upgrade for a support role meant to enhance a larger army."
+description = "Implements changes for the SACU rebalance proposed by balance team: cheaper SACUs, stronger adjacency/gateways, new army support enhancements.\nRambo SACUs are indepedently reworked with new weapons and upgrades to fill gaps in faction rosters."
 author = "Nomander, FAF Balance Team"
 url = ""
 github = ""
