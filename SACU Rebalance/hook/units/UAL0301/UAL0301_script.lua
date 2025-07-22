@@ -62,8 +62,6 @@ UAL0301 = ClassUnit(oldUAL0301) {
     ProcessEnhancementGunRange = function(self, bp)
         local wep = self:GetWeaponByLabel('RightReactonCannon')
         wep:ChangeMaxRadius(bp.NewMaxRadius)
-        wep:AddDamageMod(bp.NewDamageMod or 0)
-        wep:AddDamageRadiusMod(bp.NewDamageRadiusMod or 0)
     end,
 
     ---@param self UAL0301_new
