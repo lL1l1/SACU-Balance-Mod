@@ -144,6 +144,11 @@ UnitBlueprint {
             BuildTime = 0.1,
             Icon = "cba",
             Name = "Remove Reacton Amplifier",
+            Prerequisite = "GunRange",
+            RemoveEnhancements = {
+                "GunRange",
+                "GunRangeRemove",
+            },
             Slot = "LCH",
         },
     },
