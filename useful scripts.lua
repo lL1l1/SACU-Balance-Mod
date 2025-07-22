@@ -27,3 +27,10 @@ CreateUnitAtMouse('xab1401', 0,   -0.02,  -24.97,  0.00000)
 for i = 1, 100 do
     CreateUnitAtMouse('xrb0304', 0,    0.00,    1.34, -0.00000)
 end
+
+-- Spawn all SACU
+local bps = EntityCategoryGetUnitList(categories.SUBCOMMANDER)
+for i, bp in bps do
+    local j = i - 1
+    CreateUnitAtMouse(bp, 0, math.mod(j, 8)*4, math.floor(j/8)*4, 0)
+end
