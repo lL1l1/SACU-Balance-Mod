@@ -30,6 +30,39 @@ UAL0301 = ClassUnit(oldUAL0301) {
 
     ---@param self UAL0301_new
     ---@param bp UnitBlueprintEnhancement
+    ProcessEnhancementStabilitySuppressant = function(self, bp)
+        local wep = self:GetWeaponByLabel('RightReactonCannon')
+        wep:AddDamageMod(bp.NewDamageMod or 0)
+        wep:AddDamageRadiusMod(bp.NewDamageRadiusMod or 0)
+    end,
+
+    ---@param self UAL0301_new
+    ---@param bp UnitBlueprintEnhancement
+    ProcessEnhancementStabilitySuppressantRemove = function(self, bp)
+        local wep = self:GetWeaponByLabel('RightReactonCannon')
+        local enhBp = self.Blueprint.Enhancements["StabilitySuppressant"]
+        wep:AddDamageMod(-enhBp.NewDamageMod or 0)
+        wep:AddDamageRadiusMod(-enhBp.NewDamageRadiusMod or 0)
+    end,
+
+    ---@param self UAL0301_new
+    ---@param bp UnitBlueprintEnhancement
+    ProcessEnhancementGunRange = function(self, bp)
+        local wep = self:GetWeaponByLabel('RightReactonCannon')
+        wep:ChangeMaxRadius(bp.NewMaxRadius)
+        wep:AddDamageMod(bp.NewDamageMod or 0)
+        wep:AddDamageRadiusMod(bp.NewDamageRadiusMod or 0)
+    end,
+
+    ---@param self UAL0301_new
+    ---@param bp UnitBlueprintEnhancement
+    ProcessEnhancementGunRangeRemove = function(self, bp)
+        local wep = self:GetWeaponByLabel('RightReactonCannon')
+        wep:ChangeMaxRadius(wep.Blueprint.MaxRadius)
+    end,
+
+    ---@param self UAL0301_new
+    ---@param bp UnitBlueprintEnhancement
     ProcessEnhancementResourceAllocation = function(self, bp)
         oldUAL0301.ProcessEnhancementResourceAllocation(self, bp)
 

@@ -40,6 +40,27 @@ UnitBlueprint {
             SortCategory = "SORTOTHER",
             UnitName = "",
         },
+        Rambo = {
+            Enhancements = {
+                "StabilitySuppressant",
+                "Shield",
+                "ShieldHeavy",
+                "GunRange",
+            },
+        },
+        ShieldCombat = {
+            Enhancements = {
+                "StabilitySuppressant",
+                "Shield",
+                "GunRange",
+            },
+        },
+        SimpleCombat = {
+            Enhancements = {
+                "StabilitySuppressant",
+                "GunRange",
+            },
+        },
     },
     Enhancements = {
         ResourceAllocation = {
@@ -79,8 +100,74 @@ UnitBlueprint {
             },
             Slot = "Back",
         },
+        StabilitySuppressant = {
+            BuildCostMass = 550,
+            BuildCostEnergy = 18150,
+            BuildTime = 2255,
+            NewDamageMod = 385,
+            NewDamageRadiusMod = 2.5,
+            NewMaxRadius = "__nil",
+        },
+        Shield = {
+            BuildCostMass = 1100,
+            BuildCostEnergy = 38500,
+            BuildTime = 3762,
+            MaintenanceConsumptionPerSecondEnergy = 150,
+            ShieldMaxHealth = 9000,
+            ShieldRechargeTime = 45,
+            ShieldRegenRate = 150,
+            ShieldRegenStartTime = 1,
+        },
+        ShieldHeavy = {
+            BuildCostMass = 1600,
+            BuildCostEnergy = 56000,
+            BuildTime = 4240,
+            MaintenanceConsumptionPerSecondEnergy = 250,
+            ShieldMaxHealth = 22000,
+            ShieldRechargeTime = 125,
+            ShieldRegenRate = 150,
+            ShieldRegenStartTime = 3,
+        },
+        GunRange = {
+            BuildCostEnergy = 14850,
+            BuildCostMass = 450,
+            BuildTime = 1845,
+            Icon = "cba",
+            Name = "Reacton Amplifier",
+            NewMaxRadius = 33,
+            Slot = "LCH",
+            UpgradeUnitAmbientBones = { "UAL0301" },
+        },
+        GunRangeRemove = {
+            BuildCostEnergy = 1,
+            BuildCostMass = 1,
+            BuildTime = 0.1,
+            Icon = "cba",
+            Name = "Remove Reacton Amplifier",
+            Slot = "LCH",
+        },
+    },
+    Physics = {
+        MaxSpeed = 2.4,
+        MaxBrake = 2.4,
+        MaxSteerForce = 12.5,
+        TurnRate = 157,
+    },
+    Defense = {
+        Health = 13000,
+        MaxHealth = 13000,
+        RegenRate = 23,
+    },
+    Intel = {
+        OmniRadius = 52,
+        VisionRadius = 32,
     },
     ModWeapon = {
+        {
+            MergeLabel = "RightReactonCannon",
+            MaxRadius = 25,
+            Damage = 265,
+        },
         {
             AddIndex = 2,
             AboveWaterFireOnly = false,

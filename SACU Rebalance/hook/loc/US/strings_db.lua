@@ -1,3 +1,8 @@
+Unit_Description_0167="A highly versatile combat and engineering unit useful on late-stage battlefields. Agile and has a powerful sensor suite but is lightly armored. Upgradeable with cheap combat enhancements designed to engage enemy T3 units."
+Unit_Description_0171="Creates a rapidly-recharging, protective Personal Shield around the SACU. Requires energy to run.\n\nShield Regen Rate = 150  HP/s\nShield Regen Damage Delay = 1 second\nShield Recharge Time = 45 seconds"
+Unit_Description_0172="Greatly increases the Personal Shield's HP at a cost to its recharge capabilities. Requires energy to run.\n\nShield Regen Rate = 150 HP/s\nShield Regen Damage Delay = 3 seconds\nShield Recharge Time = 125 seconds"
+Unit_Description_0173="Greatly increases main cannon damage and grants Area-Of-Effect damage radius.\n\n+385 Main cannon damage\n+2.5 Main cannon damage radius"
+
 Unit_Description_0433="A highly versatile combat and engineering unit useful on late-stage battlefields. Highly armored with increased Regeneration rate but reduced firepower without combat enhancements. Upgradeable with limited, powerful enhancements."
 Unit_Description_0436="Greatly increases the damage and range of the SACU's main cannon, range of the Sinn Unthe Cannon if present, and range of sensors.\n\n+180 Main Cannon damage\n+10 Main cannon range\n+44 Omni Radius\n+10 Vision Radius"
 Unit_Description_0440="Expands the SACU's weaponry with a Sinn Unthe Cannon that has powerful Area-Of-Effect damage. Costs energy to fire.\n\nSinn Unthe Cannon = 2900 damage, 3.5 damage radius, 7.5 seconds reload, 11600 energy firing cost"
