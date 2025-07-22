@@ -78,9 +78,9 @@ UnitBlueprint {
         SystemIntegrityCompensator = "__nil",
         SystemIntegrityCompensatorRemove = "__nil",
         ChronoDampener = {
-            BuildCostEnergy = 54400,
-            BuildCostMass = 1900,
-            BuildTime = 5940,
+            BuildCostMass = 1000,
+            BuildCostEnergy = 41100,
+            BuildTime = 3500,
             ShowBones = { "Turbine" },
             Icon = "cd",
             Name = "Minor Chrono Dampener",
@@ -196,8 +196,8 @@ UnitBlueprint {
             DisplayName = "Chrono Dampener",
             EnabledByEnhancement = "ChronoDampener",
             EnergyChargeForFirstShot = false,
-            EnergyDrainPerSecond = 200,
-            EnergyRequired = 200,
+            EnergyDrainPerSecond = 1000,
+            EnergyRequired = 7000,
             FireTargetLayerCapsTable = {
                 Land = "Land|Water|Sub|Seabed",
                 Seabed = "Land|Water|Sub|Seabed",
