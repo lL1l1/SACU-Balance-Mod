@@ -3,12 +3,12 @@ Unit_Description_0171="Creates a rapidly-recharging, protective Personal Shield 
 Unit_Description_0172="Greatly increases the Personal Shield's HP at a cost to its recharge capabilities. Requires energy to run.\n\nShield Regen Rate = 150 HP/s\nShield Regen Damage Delay = 3 seconds\nShield Recharge Time = 125 seconds"
 Unit_Description_0173="Greatly increases main cannon damage and grants Area-Of-Effect damage radius.\n\n+385 Main cannon damage\n+2.5 Main cannon damage radius"
 
-Unit_Description_0433="A highly versatile combat and engineering unit useful on late-stage battlefields. Highly armored with increased Regeneration rate but reduced firepower without combat enhancements. Upgradeable with limited, powerful enhancements."
+Unit_Description_0433="A highly versatile combat and engineering unit useful on late-stage battlefields. Highly armored with increased Regeneration rate but reduced firepower without combat enhancements. Upgradeable with unique utility/support enhancements and powerful combat enhancements designed to engage enemy T3 units."
 Unit_Description_0436="Greatly increases the damage and range of the SACU's main cannon, range of the Sinn Unthe Cannon if present, and range of sensors.\n\n+180 Main Cannon damage\n+10 Main cannon range\n+44 Omni Radius\n+10 Vision Radius"
 Unit_Description_0440="Expands the SACU's weaponry with a Sinn Unthe Cannon that has powerful Area-Of-Effect damage. Costs energy to fire.\n\nSinn Unthe Cannon = 2900 damage, 3.5 damage radius, 7.5 seconds reload, 11600 energy firing cost"
 xsl0301_RAS_name=""
 
-Unit_Description_0016="A highly versatile combat and engineering unit useful on late-stage battlefields. Highly armored with good firepower. Upgradeable with cheap combat enhancements and powerful support enhancements."
+Unit_Description_0016="A highly versatile combat and engineering unit useful on late-stage battlefields. Highly armored with good firepower. Upgradeable with powerful support enhancements and combat enhancements designed to engage T4 units."
 Unit_Description_0020="Equips the SACU with a radar jammer that creates false radar signatures (countered by omni sensors) and greatly expands the range of its standard sensor systems.\n\n+84 Omni Radius\n+24 Vision Radius\nJamming Blips = 10\nJamming Radius = 16"
 Unit_Description_0023="Massively increases the SACU's fire rate and mobility.\n\n+100% Main Cannon Rate of Fire\n+36% Movement Speed, Acceleration, and Turn Rate"
 Unit_Description_0024="Increases main cannon's damage to 450 and grants it a small Area-Of-Effect damage radius.\n\n+150 Main cannon damage\n+1 Main cannon damage radius"
@@ -18,7 +18,7 @@ uel0301_IntelJammer_name=""
 enhancements_0071="Intel Support System"
 enhancements_0072="Remove Intel Support System"
 
-Unit_Description_0115="A highly versatile combat and engineering unit useful on late-stage battlefields. Lightly armoured and slow, but highly upgradeable."
+Unit_Description_0115="A highly versatile combat and engineering unit useful on late-stage battlefields. Lightly armoured and slow, but highly upgradeable with enhancements designed to engage enemy T3, SACU, naval, or air units."
 Unit_Description_0116="Personal Cloaking further hiding the SACU from optical sensors and providing a large HP boost. Countered by omni sensors. Costs a large amount of energy to run.\n\n+9000 Health"
 Unit_Description_0117="Equips the SACU with an EMP Charge launcher, utterly disabling enemy units. Costs energy to fire.\n\nEMP Charge Launcher = 1000 damage, 5 damage radius, 13 seconds reload, 30000 energy firing cost\nStun Duration = 3 seconds (T3), 1 second (SACU & T4)"
 Unit_Description_0118="Increases main cannon damage and range. Increases the range of the Pulsed Microwave Laser or EMP Charge Launcher if present.\n\n+200 Main cannon damage\n+7 Main cannon range\n+7 Pulsed Microwave Laser range\n+7 EMP Charge Launcher range"
