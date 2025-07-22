@@ -187,10 +187,10 @@ UnitBlueprint {
                 ---@type table<BuffAffectName, BlueprintBuffAffect>
                 Affects = {
                     MoveMult = {
-                        Mult = 0.95,
+                        Mult = 0.90,
                     },
                     RateOfFire = {
-                        Mult = 1/0.92,
+                        Mult = 1/0.80,
                     },
                 },
             },
