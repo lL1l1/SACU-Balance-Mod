@@ -16,6 +16,18 @@ UAL0301 = ClassUnit(oldUAL0301) {
         self:SetWeaponEnabledByLabel("ChronoDampener", false)
     end,
 
+    ---@param self UAL0301
+    ---@param bp UnitBlueprintEnhancement
+    ProcessEnhancementShieldHeavy = function(self, bp)
+        ForkThread(function()
+            WaitTicks(1)
+            self:CreateShield(bp)
+            self:SetEnergyMaintenanceConsumptionOverride(bp.MaintenanceConsumptionPerSecondEnergy or 0)
+            self:SetMaintenanceConsumptionActive()
+        end)
+    end,
+
+
     ---@param self UAL0301_new
     ---@param bp UnitBlueprintEnhancement
     ProcessEnhancementChronoDampener = function (self, bp)
