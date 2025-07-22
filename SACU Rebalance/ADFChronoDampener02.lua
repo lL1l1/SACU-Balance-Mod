@@ -138,7 +138,6 @@ ADFChronoDampener02 = Class(DefaultProjectileWeapon) {
         end
 
         ApplyBuff(target, self.ChronoBuffName)
-        target:DebugLog('Target stunned', GetGameTick())
 
         return true
     end,
