@@ -192,10 +192,10 @@ UnitBlueprint {
             Slot = "LCH",
         },
         CloakingGenerator = {
-            BuildCostEnergy = 67000,
-            BuildCostMass = 1500,
-            BuildTime = 4360,
-            MaintenanceConsumptionPerSecondEnergy = 800,
+            BuildCostEnergy = 64000,
+            BuildCostMass = 1370,
+            BuildTime = 3860,
+            MaintenanceConsumptionPerSecondEnergy = 900,
             NewHealth = 9000,
             Prerequisite = "SelfRepairSystem",
         },
@@ -227,7 +227,6 @@ UnitBlueprint {
             BuildCostMass = 1100,
             BuildTime = 3600,
             NewHealth = 6500,
-            MaintenanceConsumptionPerSecondEnergy = 200,
         },
         Switchback = {
             BuildCostEnergy = 10100,
