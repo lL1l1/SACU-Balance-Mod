@@ -26,7 +26,7 @@ do
         },
         T3MassFabricator = {
             MassActive = {
-                SIZE20 = -0.2
+                SIZE20 = -0.15
             }
         },
     }
