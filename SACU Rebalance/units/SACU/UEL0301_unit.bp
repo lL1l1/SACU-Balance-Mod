@@ -94,7 +94,7 @@ UnitBlueprint {
             BuildCostMass = 1000,
             BuildTime = 3420,
             NewRateOfFire = 10 / 5,
-            NewSpeedMult = 3.0 / 2.2
+            NewSpeedMult = 2.7 / 2.2
         },
         HighExplosiveOrdnance = {
             BuildCostEnergy = 27000,
