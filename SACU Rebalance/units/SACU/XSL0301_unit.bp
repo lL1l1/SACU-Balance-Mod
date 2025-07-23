@@ -179,6 +179,7 @@ SetModBlueprintFunction(function(all_bps)
     local origBp = all_bps.Unit['xsl0301'] --[[@as UnitBlueprint]]
     MergeWeaponByLabel(origBp, "LightChronatronCannon", nil, {
         Damage = 220,
+        MuzzleVelocity = 29,
     })
     local overChargeBase = {
         Audio = {

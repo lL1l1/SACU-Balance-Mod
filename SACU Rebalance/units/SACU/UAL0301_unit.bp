@@ -172,6 +172,7 @@ UnitBlueprint {
             MergeLabel = "RightReactonCannon",
             MaxRadius = 25,
             Damage = 265,
+            MuzzleVelocity = 29,
         },
         {
             AddIndex = 2,
