@@ -153,8 +153,8 @@ UnitBlueprint {
         },
     },
     Physics = {
-        MaxSpeed = 2.4,
-        MaxBrake = 2.4,
+        MaxSpeed = 2.3,
+        MaxBrake = 2.3,
         MaxSteerForce = 12.5,
         TurnRate = 157,
     },
