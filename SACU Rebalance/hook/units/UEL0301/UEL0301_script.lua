@@ -276,7 +276,6 @@ UEL0301 = ClassUnit(oldUEL0301) {
     ---@param bp UnitBlueprintEnhancement
     ProcessEnhancementHighExplosiveOrdnance = function(self, bp)
         local wep = self:GetWeaponByLabel('RightHeavyPlasmaCannon')
-        wep:AddDamageRadiusMod(bp.NewDamageRadius)
         wep:AddDamageMod(bp.NewDamageMod)
     end,
 
@@ -285,7 +284,6 @@ UEL0301 = ClassUnit(oldUEL0301) {
     ProcessEnhancementHighExplosiveOrdnanceRemove = function(self, bp)
         local enhBp = self.Blueprint.Enhancements['HighExplosiveOrdnance']
         local wep = self:GetWeaponByLabel('RightHeavyPlasmaCannon')
-        wep:AddDamageRadiusMod(-enhBp.NewDamageRadius)
         wep:AddDamageMod(-enhBp.NewDamageMod)
     end,
 
