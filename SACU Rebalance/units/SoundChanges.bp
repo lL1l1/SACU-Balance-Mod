@@ -1,0 +1,41 @@
+-- Nuke sounds have no attenuation so they have to be changed to have attenuation.
+-- For now, just replace them with the large explosion sound.
+
+ProjectileBlueprint {
+    Merge = true,
+    BlueprintId = "/effects/Entities/SCUDeath01/SCUDeath01_proj.bp",
+    -- Fixes this:
+    --   warning: Error in file /lua/RuleInit.lua : Moho::FILE_MakeAbsolute: Null argument.
+    Source = "/effects/Entities/SCUDeath01/SCUDeath01_proj.bp",
+    Audio = {
+        NukeExplosion = Sound { Bank = 'Explosions', Cue = 'Explosion_Large_01', LodCutoff = 'UnitMove_LodCutoff' },
+    },
+}
+
+local newKilledSoundBp = {
+    Merge = true,
+    Audio = {
+        Killed = Sound { Bank = 'Explosions',  Cue = 'Explosion_Large_01', LodCutoff = 'UnitMove_LodCutoff' },
+    },
+}
+
+local source = debug.getinfo(1, 'S').source
+source = DiskToLocal(string.sub(source, 2)--[[@as FileName]])
+
+--- Helper func since storing a BP modifies the inputted table
+---@param bp UnitBlueprint
+---@param newId UnitId
+local function ChangeBpId(bp, newId)
+    bp.BlueprintId = newId
+    bp.Merge = true
+    bp.Source = source
+end
+
+ChangeBpId(newKilledSoundBp, "ual0301")
+UnitBlueprint(table.copy(newKilledSoundBp))
+ChangeBpId(newKilledSoundBp, "uel0301")
+UnitBlueprint(table.copy(newKilledSoundBp))
+ChangeBpId(newKilledSoundBp, "url0301")
+UnitBlueprint(table.copy(newKilledSoundBp))
+ChangeBpId(newKilledSoundBp, "xsl0301")
+UnitBlueprint(table.copy(newKilledSoundBp))
