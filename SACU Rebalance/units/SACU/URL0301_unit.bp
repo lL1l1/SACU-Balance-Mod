@@ -17,6 +17,7 @@ UnitBlueprint {
     Physics = {
         MaxSpeed = 2.1,
         MaxAcceleration = 2.1,
+        TurnRate = 135,
     },
     EnhancementPresets = {
         Engineer = {

@@ -156,7 +156,7 @@ UnitBlueprint {
         MaxSpeed = 2.3,
         MaxBrake = 2.3,
         MaxSteerForce = 12.5,
-        TurnRate = 157,
+        TurnRate = 140,
     },
     Defense = {
         Health = 13000,

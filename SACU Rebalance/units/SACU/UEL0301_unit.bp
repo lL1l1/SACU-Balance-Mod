@@ -7,6 +7,9 @@ UnitBlueprint {
         BuildTime = 8250,
         BuildRate = 25,
     },
+    Physics = {
+        TurnRate = 125,
+    },
     EnhancementPresets = {
         Engineer = {
             -- after ras (10), before combatant (15)

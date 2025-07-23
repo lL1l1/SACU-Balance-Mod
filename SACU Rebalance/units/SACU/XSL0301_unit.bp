@@ -10,6 +10,9 @@ UnitBlueprint {
         TeleportEnergyMod = 7.68,
         BuildRate = 25,
     },
+    Physics = {
+        TurnRate = 130,
+    },
     EnhancementPresets = {
         RAS = {
             Description = "<LOC xsl0301_RAS_desc>SACU (RAS preset)",
