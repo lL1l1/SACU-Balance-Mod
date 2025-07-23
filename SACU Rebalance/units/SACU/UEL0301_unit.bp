@@ -54,6 +54,7 @@ UnitBlueprint {
             BuildCostMass = 1800,
             BuildTime = 5540,
             MaintenanceConsumptionPerSecondEnergy = 350,
+            ShieldMaxHealth = 24000,
             ScriptedEnergyMaintenanceToggle = true,
         },
         ShieldGeneratorField = {
