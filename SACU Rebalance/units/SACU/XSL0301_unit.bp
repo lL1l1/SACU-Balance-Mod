@@ -184,15 +184,16 @@ SetModBlueprintFunction(function(all_bps)
         Audio = {
             Fire = Sound { Bank = 'XSL_Weapon', Cue = 'XSL0401_Exp_Phason_Fire', LodCutoff = 'Weapon_LodCutoff' },
         },
-        Damage = 2900,
+        Damage = 3300,
         DamageRadius = 3.5,
         DamageType = "Normal",
         DisplayName = "Sinn Unthe Cannon",
         Overcharge = "__nil",
-        EnergyRequired = 11600,
-        EnergyDrainPerSecond = 1850,
+        EnergyRequired = 6000,
+        EnergyDrainPerSecond = 960,
         ProjectileId = "/projectiles/SDFSinnuntheWeapon01/SDFSinnuntheWeapon01_proj.bp",
-        MuzzleVelocity = 22,
+        MuzzleVelocity = 35,
+        RateOfFire = 10 / 65,
     }
     MergeWeaponByLabel(origBp, "OverCharge", nil, overChargeBase)
     MergeWeaponByLabel(origBp, "AutoOverCharge", nil

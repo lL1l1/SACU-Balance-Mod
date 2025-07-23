@@ -5,7 +5,7 @@ Unit_Description_0173="Greatly increases main cannon damage and grants Area-Of-E
 
 Unit_Description_0433="A highly versatile combat and engineering unit useful on late-stage battlefields. Highly armored with increased Regeneration rate but reduced firepower without combat enhancements. Upgradeable with unique utility/support enhancements and powerful combat enhancements designed to engage enemy T3 units."
 Unit_Description_0436="Greatly increases the damage and range of the SACU's main cannon, range of the Sinn Unthe Cannon if present, and range of sensors.\n\n+180 Main Cannon damage\n+10 Main cannon range\n+44 Omni Radius\n+10 Vision Radius"
-Unit_Description_0440="Expands the SACU's weaponry with a Sinn Unthe Cannon that has powerful Area-Of-Effect damage. Requires energy to fire.\n\nSinn Unthe Cannon = 2900 damage, 3.5 damage radius, 7.5 seconds reload, 11600 energy firing cost"
+Unit_Description_0440="Expands the SACU's weaponry with a Sinn Unthe Cannon that has powerful Area-Of-Effect damage. Requires energy to fire.\n\nSinn Unthe Cannon = 3300 damage, 3.5 damage radius, 6.5 seconds reload, 6000 energy firing cost"
 xsl0301_RAS_name=""
 
 Unit_Description_0016="A highly versatile combat and engineering unit useful on late-stage battlefields. Highly armored with good firepower. Upgradeable with powerful support enhancements and combat enhancements designed to engage T4 units."
