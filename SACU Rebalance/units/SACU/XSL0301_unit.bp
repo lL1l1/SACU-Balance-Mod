@@ -96,9 +96,9 @@ UnitBlueprint {
             NewDamageMod = 180,
         },
         DamageStabilization = {
-            BuildCostEnergy = 99000,
-            BuildCostMass = 3000,
-            BuildTime = 9550,
+            BuildCostEnergy = 84150,
+            BuildCostMass = 2550,
+            BuildTime = 7850,
         },
         ResourceAllocation = {
             BuildCostEnergy = 130000,
