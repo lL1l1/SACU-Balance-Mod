@@ -9,7 +9,7 @@ Unit_Description_0440="Expands the SACU's weaponry with a Sinn Unthe Cannon that
 xsl0301_RAS_name=""
 
 Unit_Description_0016="A highly versatile combat and engineering unit useful on late-stage battlefields. Highly armored with good firepower. Upgradeable with powerful support enhancements and combat enhancements designed to engage T4 units."
-Unit_Description_0019="Replaces the SACU's Personal Shield with a Bubble Shield which protects friendly units inside it. Requires additional energy to run. Shields transfer residual damage to intersecting bubbles.\n\nShield Regen Rate = 150 HP/s\nShield Recharge Time = 215 seconds"
+Unit_Description_0019="Replaces the SACU's Personal Shield with a Bubble Shield which protects friendly units inside it. Requires additional energy to run. Shields transfer residual damage to intersecting bubbles.\n\nShield Regen Rate = 160 HP/s\nShield Recharge Time = 110 seconds"
 Unit_Description_0020="Equips the SACU with a radar jammer that creates false radar signatures (countered by omni sensors) and greatly expands the range of its standard sensor systems.\n\n+84 Omni Radius\n+24 Vision Radius\nJamming Blips = 10\nJamming Radius = 16"
 Unit_Description_0023="Massively increases the SACU's fire rate and mobility.\n\n+100% Main Cannon Rate of Fire\n+23% Movement Speed, Acceleration, and Turn Rate"
 Unit_Description_0024="Increases main cannon's damage.\n\n+150 Main cannon damage"

@@ -59,11 +59,11 @@ UnitBlueprint {
             BuildTime = 11300,
             Prerequisite = "__nil",
             ScriptedEnergyMaintenanceToggle = true,
-            ShieldMaxHealth = 52000,
-            ShieldRechargeTime = 215,
-            ShieldRegenRate = 150,
-            ShieldRegenStartTime = 1,
-            ShieldSpillOverDamageMod = 0.2,
+            ShieldMaxHealth = 22000,
+            ShieldRechargeTime = 110,
+            ShieldRegenRate = 160,
+            ShieldRegenStartTime = 3,
+            ShieldSpillOverDamageMod = 0.3,
         },
         ShieldGeneratorFieldRemove = {
             RemoveEnhancements = {
